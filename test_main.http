@@ -24,3 +24,76 @@ Content-Type: application/json
 }
 
 ###
+
+# 论文问答：agent 自己决定要不要查库、查几次，返回问题、答案和来源
+POST http://127.0.0.1:8000/api/query/paper
+Content-Type: application/json
+
+{
+  "question": "这篇论文提出的方法在哪些数据集上做了实验？",
+  "top_k": 3
+}
+
+###
+
+# 追问：带上上一轮返回的 conversation_id，历史由服务端提供
+POST http://127.0.0.1:8000/api/query/paper
+Content-Type: application/json
+
+{
+  "question": "那它的实验结果呢？",
+  "conversation_id": "把上一轮返回的 id 填这里"
+}
+
+###
+
+# 流式问答（SSE）：返回 status / sources / token / done 事件
+POST http://127.0.0.1:8000/api/query/paper/stream
+Content-Type: application/json
+
+{
+  "question": "48Ca 那篇论文的熵是怎么定义的？"
+}
+
+###
+
+# 会话列表 / 详情
+GET http://127.0.0.1:8000/api/conversations
+Accept: application/json
+
+###
+
+# 上传本地 PDF：只落盘，返回 paper_id（同步，很快）
+POST http://127.0.0.1:8000/api/papers/upload
+Content-Type: multipart/form-data; boundary=----boundary
+
+------boundary
+Content-Disposition: form-data; name="file"; filename="my-paper.pdf"
+Content-Type: application/pdf
+
+< ./data/papers/uploads/58975818caec48eaa4e48384b238ca07.pdf
+------boundary--
+
+###
+
+# 提交后台解析入库，立刻返回；进度用下面那个接口查
+POST http://127.0.0.1:8000/api/papers/upload/upload:把paper_id填这里/parse
+
+###
+
+# 论文列表（元数据表，含标题、来源、状态、页数、块数）
+GET http://127.0.0.1:8000/api/papers
+Accept: application/json
+
+###
+
+# 单篇详情：status = indexing 表示后台还在跑，failed 看 error
+GET http://127.0.0.1:8000/api/papers/arxiv:2601.00597
+Accept: application/json
+
+###
+
+# 删除论文（向量 + 元数据 + 磁盘文件一起清）
+DELETE http://127.0.0.1:8000/api/papers/arxiv:2601.00597
+
+###

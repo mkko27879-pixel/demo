@@ -5,15 +5,26 @@ requires-python = ">=3.12"
 dependencies = [
     "dashscope>=1.27.6",
     "fastapi>=0.141.1",
+    "fonttools>=4.66.0",
     "httpx>=0.28.1",
+    "langchain>=1.4.2",
     "langchain-community>=0.4.2",
+    "langchain-deepseek>=1.1.1",
     "langchain-milvus>=0.4.0",
     "langchain-text-splitters>=1.1.2",
     "pymilvus>=3.0.2",
     "pypdf>=6.19.0",
+    "python-multipart>=0.0.32",
     "uvicorn>=0.53.0",
 ]
 
 [[tool.uv.index]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 default = true
+
+[dependency-groups]
+dev = ["pytest>=8.4.2"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
