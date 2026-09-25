@@ -1,0 +1,53 @@
+# DeepSeek 风格主题：白底 + 蓝紫主色（#4D6BFE），大圆角，克制的边框。
+# 同时定义 [theme.light] 和 [theme.dark]，用户可以在右上角切换明暗。
+# 字体走 Google Fonts；中文字符会由系统字体兜底。
+
+[theme]
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+baseFontSize = 15
+baseRadius = "large"
+buttonRadius = "large"
+showWidgetBorder = true
+showSidebarBorder = false
+linkUnderline = false
+headingFontSizes = ["30px", "22px", "18px", "16px", "14px", "12px"]
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+
+[theme.light]
+primaryColor = "#4D6BFE"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3F5F9"
+textColor = "#1B1B1F"
+linkColor = "#4D6BFE"
+borderColor = "#E3E6ED"
+codeBackgroundColor = "#F3F5F9"
+codeTextColor = "#1B1B1F"
+
+[theme.light.sidebar]
+backgroundColor = "#F7F8FC"
+secondaryBackgroundColor = "#EDEFF6"
+borderColor = "#E3E6ED"
+
+[theme.dark]
+primaryColor = "#7B93FF"
+backgroundColor = "#1C1C1F"
+secondaryBackgroundColor = "#26262B"
+textColor = "#E9E9EE"
+linkColor = "#7B93FF"
+borderColor = "#35353C"
+codeBackgroundColor = "#141416"
+codeTextColor = "#E9E9EE"
+
+[theme.dark.sidebar]
+backgroundColor = "#161619"
+secondaryBackgroundColor = "#222227"
+borderColor = "#2E2E34"
+
+[server]
+headless = true
+# 改了 .py 就自动 rerun，省掉"页面弹提示、还要点一下"的来回
+runOnSave = true
+
+[browser]
+gatherUsageStats = false

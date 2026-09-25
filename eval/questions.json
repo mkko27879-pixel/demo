@@ -1,0 +1,116 @@
+[
+  {
+    "question": "论文最终选用了哪个筛选势模型？",
+    "expect_paper": "arxiv:2601.00597",
+    "expect_keywords": ["Lenz", "Jensen"],
+    "note": "中文问英文论文"
+  },
+  {
+    "question": "为什么 ZBL 和 Molière 模型被排除了？",
+    "expect_paper": "arxiv:2601.00597",
+    "expect_keywords": ["Bayes", "ZBL"],
+    "note": "专有名词密集"
+  },
+  {
+    "question": "What is the improved ionization model used for?",
+    "expect_paper": "arxiv:2601.00597",
+    "expect_keywords": ["WIMP", "DarkSide", "low-mass"],
+    "note": "英文提问"
+  },
+  {
+    "question": "暗物质探测的灵敏度受什么限制？",
+    "expect_paper": "arxiv:2601.00597",
+    "expect_keywords": ["WIMP", "sensitivity", "recoil", "quenching"],
+    "level": "hard",
+    "note": "难：考概括"
+  },
+  {
+    "question": "论文用了哪种统计方法比较不同模型？",
+    "expect_paper": "arxiv:2601.00597",
+    "expect_keywords": ["Bayes"],
+    "level": "hard",
+    "note": "难：方法名不在问句里"
+  },
+  {
+    "question": "液氩探测器的电离信号怎么换算成核反冲能量？",
+    "expect_paper": "arxiv:2601.00597",
+    "expect_keywords": ["quenching", "Qy", "recoil"],
+    "level": "hard",
+    "note": "难：换个说法问同一件事"
+  },
+  {
+    "question": "Tau lepton 的重建效率是多少？",
+    "expect_paper": "arxiv:2601.01674",
+    "expect_keywords": ["efficiency", "80"],
+    "note": "中文问数字"
+  },
+  {
+    "question": "TauFinder 是什么？",
+    "expect_paper": "arxiv:2601.01674",
+    "expect_keywords": ["TauFinder"],
+    "note": "专有名词查询"
+  },
+  {
+    "question": "这篇论文研究的是哪个衰变过程？",
+    "expect_paper": "arxiv:2601.01674",
+    "expect_keywords": ["hadronic", "tau"],
+    "note": "中文泛问"
+  },
+  {
+    "question": "未来对撞机上怎么识别 τ 轻子？",
+    "expect_paper": "arxiv:2601.01674",
+    "expect_keywords": ["TauFinder", "tau", "reconstruct"],
+    "level": "hard",
+    "note": "难：希腊字母 + 算法名"
+  },
+  {
+    "question": "强子末态下的希格斯衰变测量有什么特点？",
+    "expect_paper": "arxiv:2601.01674",
+    "expect_keywords": ["hadronic", "tau", "Higgs"],
+    "level": "hard",
+    "note": "难：学术化表述"
+  },
+  {
+    "question": "这篇论文合成的是什么单体？",
+    "expect_paper": "upload:820823b8bf194f87ae6d3b76718589c8",
+    "expect_keywords": ["Kobayashi", "苯炔"],
+    "note": "中文论文：中文提问"
+  },
+  {
+    "question": "论文用什么方法测定前体单元的摩尔分数？",
+    "expect_paper": "upload:820823b8bf194f87ae6d3b76718589c8",
+    "expect_keywords": ["NMR"],
+    "note": "中文论文：问表征手段"
+  },
+  {
+    "question": "环加成反应的捕获率大概是多少？",
+    "expect_paper": "upload:820823b8bf194f87ae6d3b76718589c8",
+    "expect_keywords": ["80", "捕获率"],
+    "level": "hard",
+    "note": "中文论文：问具体数字"
+  },
+  {
+    "question": "这篇论文用了什么聚合方法？",
+    "expect_paper": "upload:820823b8bf194f87ae6d3b76718589c8",
+    "expect_keywords": ["共聚", "自由基"],
+    "level": "hard",
+    "note": "中文论文：术语在正文里"
+  },
+  {
+    "question": "今天天气怎么样？",
+    "expect_paper": null,
+    "note": "负样本：应全部过滤"
+  },
+  {
+    "question": "Transformer 的注意力机制是怎么实现的？",
+    "expect_paper": null,
+    "level": "hard",
+    "note": "难负样本：学术话题"
+  },
+  {
+    "question": "论文里用了什么深度学习模型？",
+    "expect_paper": null,
+    "level": "hard",
+    "note": "难负样本：和论文话题沾边但没有答案"
+  }
+]
